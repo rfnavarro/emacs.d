@@ -1,0 +1,26 @@
+# -*- mode: snippet -*-
+# name: pdf-tufte
+# expand-env: ((yas-indent-line 'fixed))
+# key: qheader
+# --
+---
+title: "${1:Título}"
+subtitle: "${2:Subtítulo}"
+date: today
+format:
+  pdf: default
+  html:
+    self-contained: true
+    grid:
+      margin-width: 350px
+execute:
+  echo: fenced
+  message: false
+  warning: false
+  error: false
+reference-location: margin
+citation-location: margin
+#bibliography: :bibliography.bib
+---
+
+$0
