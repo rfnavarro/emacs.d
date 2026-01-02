@@ -24,8 +24,12 @@
 (require 'init-treesitter)
 (require 'init-benchmarking)
 (require 'init-sessions)
+(require 'init-whitespace)
+(require 'init-editing-utils)
 (defvar warning-minimum-level)
  (setq warning-minimum-level :error)
+
+
 
 ;;Autodesplazar terminal hacia abajo
 (setq comint-move-point-for-output t)
