@@ -1,5 +1,6 @@
 ;;; summary
 
+
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (load custom-file :no-error-if-file-is-missing)
 (eval-when-compile
@@ -14,48 +15,17 @@
 (require 'init-elpa) ;purcel
 (require 'init-windows)
 (require 'init-mackeys)
-
-;;; Purcell shell-conda solution
-(use-package exec-path-from-shell
-  :ensure t
-  :if (memq window-system '(mac ns))
-  :config
-  (exec-path-from-shell-initialize))
-
-;Emacs Version
-(when (< emacs-major-version 29)
-  (unless (package-installed-p 'use-package)
-    (unless package-archive-contents
-      (package-refresh-contents))
-    (package-install 'use-package)))
-
-
-;; Adjust garbage collection threshold for early startup (see use of gcmh below)
-(setq gc-cons-threshold (* 128 1024 1024))
-
-
-;; Process performance tuning
-(setq read-process-output-max (* 4 1024 1024))
-(setq process-adaptive-read-buffering nil)
-
-;; General performance tuning
-(when (require-package 'gcmh)
-  (setq gcmh-high-cons-threshold (* 128 1024 1024))
-  (add-hook 'after-init-hook (lambda ()
-                               (gcmh-mode)
-                               (diminish 'gcmh-mode))))
-
-(setq jit-lock-defer-time 0)
-
-
-
-;;; Set up the package manager
-
-;; ;; ;;;emadrid
-;; ;; ;; Debug and Wanings
-;; (setq debug-on-error t)
-;; (defvar warning-minimum-level)
-;; (setq warning-minimum-level :error)
+(require 'init-uniquify)
+(require 'init-gui-frames)
+(require 'init-ibuffer)
+(require 'minibuffer)
+(require 'init-misc)
+(require 'init-paredit)
+(require 'init-treesitter)
+(require 'init-benchmarking)
+(require 'init-sessions)
+(defvar warning-minimum-level)
+ (setq warning-minimum-level :error)
 
 ;;Autodesplazar terminal hacia abajo
 (setq comint-move-point-for-output t)

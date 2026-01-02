@@ -16,7 +16,7 @@
   ;; 2. Integración estándar
   (conda-env-initialize-interactive-shells)
   (conda-env-initialize-eshell)
-  (conda-env-autoactivate-mode 1)
+;  (conda-env-autoactivate-mode 1)
   
   ;; 3. Forzar que el shell de Python siga al entorno de Conda
   (add-hook 'python-mode-hook 'conda-env-activate-for-buffer))
