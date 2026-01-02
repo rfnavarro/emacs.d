@@ -13,6 +13,12 @@
 (require 'init-utils) ;purcel
 (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el purcel
 (require 'init-elpa) ;purcel
+
+;;; summary
+;; Load configs for specific features and modes
+(require-package 'diminish)
+
+
 (require 'init-windows)
 (require 'init-mackeys)
 (require 'init-uniquify)
@@ -42,10 +48,6 @@
                (allow-no-window . t)))
 
 
-
-;;; summary
-;; Load configs for specific features and modes
-(require-package 'diminish)
 
 
 
