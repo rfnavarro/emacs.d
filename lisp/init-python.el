@@ -13,6 +13,11 @@
               auto-mode-alist))
 
 (setq python-shell-interpreter "python3")
+;; (setq python-shell-interpreter "ipython"
+;;       python-shell-interpreter-args "--simple-prompt -i")
+
+
+
 
 (require-package 'pip-requirements)
 
@@ -56,13 +61,12 @@
           (lambda ()
             ;; 1. Hideshow: Ocultar bloques de código (funciones, clases, if/for)
             (hs-minor-mode 1)
-            
+
             ;; 2. Outline: Plegar el archivo basado en tus comentarios "# ---"
             (outline-minor-mode 1)
-            
+
             ;; Detecta líneas que empiecen con "# ---" (incluso si tienen espacios antes)
             (setq-local outline-regexp "# ---")))
-
 
 
 
