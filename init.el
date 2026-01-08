@@ -75,7 +75,10 @@
 ;;me
 (require 'init-me)
 (require 'init-themes)
-(require 'init-ispell)
+                                        ;
+;(require 'init-ispell)
+(require 'init-lsp-mode)
+
 ;; Envs
 (require 'init-conda)
 (require 'init-vterm)
