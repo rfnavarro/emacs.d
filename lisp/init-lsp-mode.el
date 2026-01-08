@@ -1,3 +1,5 @@
+(setenv "_JAVA_OPTIONS" "-Djdk.xml.totalEntitySizeLimit=2000000")
+
 (use-package lsp-mode
   :ensure t)
 
