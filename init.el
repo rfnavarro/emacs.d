@@ -53,6 +53,7 @@
 
 ;; IDE
 (require 'init-r)
+(require 'init-latex)
 (require 'init-quarto)
 (require 'init-yaml)
 (require 'init-stan)
