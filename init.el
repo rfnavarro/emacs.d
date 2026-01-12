@@ -56,7 +56,7 @@
 (require 'init-latex)
 (require 'init-quarto)
 (require 'init-yaml)
-(require 'init-stan)
+(require 'init-stan-ts-mode)
 (require 'init-python)
 (require 'init-flymake)
 (require 'init-eglot)
@@ -86,3 +86,28 @@
 
 ;;Visor
 (require 'init-pdf)
+
+
+(require 'init-eldoc)
+
+ (when (treesit-available-p)
+    ;; (require 'treesit)
+    (setq treesit-font-lock-level 4)
+    (setq treesit-language-source-alist
+          '((stan . ("https://github.com/WardBrian/tree-sitter-stan"))
+            ; other languages here
+            ))
+
+
+    ; could also use https://github.com/renzmann/treesit-auto or similar
+    (defun bmw/treesit-install-all-languages ()
+      "Install all languages specified by `treesit-language-source-alist'."
+      (interactive)
+      (let ((languages (mapcar 'car treesit-language-source-alist)))
+        (dolist (lang languages)
+          (unless (treesit-language-available-p lang)
+            (treesit-install-language-grammar lang)
+            (message "`%s' parser was installed." lang)
+            (sit-for 0.75))
+          )))
+    (bmw/treesit-install-all-languages)

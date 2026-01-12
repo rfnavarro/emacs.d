@@ -22,7 +22,20 @@
           (lambda ()
             (setq-local display-line-numbers nil)))
 
+;; Alternativa rápida si usas una versión reciente de ESS
 
+(setq ess-R-font-lock-keywords
+      '((ess-R-fl-keyword:keywords . t)
+        (ess-R-fl-keyword:constants . t)
+        (ess-R-fl-keyword:modifiers . t)
+        (ess-R-fl-keyword:fun-defs . t)
+        (ess-R-fl-keyword:assign-ops . t)
+        (ess-R-fl-keyword:%op% . t)
+        (ess-fl-keyword:fun-calls . t)
+        (ess-fl-keyword:numbers )
+        (ess-fl-keyword:operators )
+        (ess-fl-keyword:delimiters )
+        (ess-fl-keyword:F&T )))
 
 ;; insertar chunk de r
 (defun tws-insert-r-chunk (header) 

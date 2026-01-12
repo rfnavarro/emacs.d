@@ -12,7 +12,8 @@
          (latex-mode . lsp)
          (LaTeX-mode . lsp)
          (org-mode . lsp)
-         (markdown-mode . lsp))
+         (markdown-mode . lsp)
+         )
   :init
   (setq lsp-ltex-language "es")
   :config
