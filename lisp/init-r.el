@@ -4,6 +4,10 @@
 (use-package ess
   :ensure t)
 
+(use-package ess-view-data
+  :ensure t)
+
+(setq ess-view-data-toggle-maxprint nil)
 
 ;; Asegura que el terminal baje automáticamente al recibir salida
 (setq comint-scroll-to-bottom-on-input t)
@@ -15,7 +19,7 @@
 
 
 
-;; Numeración en la consola de R (ESS)
+;; Numeracdión en la consola de R (ESS)
 ;;(add-hook 'inferior-ess-r-mode-hook #'display-line-numbers-mode)
 
 (add-hook 'inferior-ess-r-mode-hook

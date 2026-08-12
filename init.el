@@ -111,3 +111,7 @@
             (sit-for 0.75))
           )))
     (bmw/treesit-install-all-languages)
+    )
+
+;; second brain
+(require 'init-brain)
